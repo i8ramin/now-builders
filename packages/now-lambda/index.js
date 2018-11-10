@@ -15,6 +15,7 @@ exports.build = async ({ files, entrypoint }) => {
   // if (!config.handler) throw new Error('Handler not found in config');
   // if (!config.runtime) throw new Error('Runtime not found in config');
 
+  console.log('****** @i8ramin/lambda.files', files);
   console.log('****** @i8ramin/lambda', { entrypoint });
 
   const lambda = new Lambda({
