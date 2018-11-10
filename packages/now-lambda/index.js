@@ -15,11 +15,15 @@ exports.build = async ({ files, entrypoint }) => {
   // if (!config.handler) throw new Error('Handler not found in config');
   // if (!config.runtime) throw new Error('Runtime not found in config');
 
+  console.log('****** @i8ramin/lambda', { entrypoint });
+
   const lambda = new Lambda({
     zipStream: files[entrypoint].toStream(), // TODO zipBuffer
     handler: 'lambda.handler',
     runtime: 'nodejs8.10',
   });
+
+  console.log('****** @i8ramin/lambda', { lambda });
 
   return { [entrypoint]: lambda };
 };
